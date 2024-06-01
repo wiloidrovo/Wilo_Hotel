@@ -1,7 +1,13 @@
 django-environ
+
 django-cors-headers
+
 djangorestframework
+
 pillow
+
 django-storages
+
 django-ckeditor
+
 psycopg2
