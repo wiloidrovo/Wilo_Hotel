@@ -64,7 +64,7 @@ CKEDITOR_CONFIGS = {
         'autoParagraph': False
     }
 }
-CKEDITOR_UPLOAD_PATH = "/media/"
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 
 MIDDLEWARE = [

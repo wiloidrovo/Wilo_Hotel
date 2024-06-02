@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9b149a70.css",
+    "main.js": "/static/js/main.89d32a56.js",
+    "static/media/cuarto3.png": "/static/media/cuarto3.dcc5d31c6d67d656c04b.png",
+    "static/media/cuarto1.png": "/static/media/cuarto1.077e68c373991f835b46.png",
+    "static/media/cuarto4.png": "/static/media/cuarto4.b17b718dab48d69cc5c6.png",
+    "static/media/cuarto2.png": "/static/media/cuarto2.f09b8dd789d7a14c1d76.png",
+    "static/media/room2.png": "/static/media/room2.8193c455ee778d38bc34.png",
+    "static/media/wilo.png": "/static/media/wilo.aceb7e6e067a366b2134.png",
+    "static/media/wilologo.png": "/static/media/wilologo.d6c17788238934109aa4.png",
+    "static/media/loading.gif": "/static/media/loading.627574d6788c07eafbb3.gif",
+    "static/media/wilologotext.png": "/static/media/wilologotext.ed84824e0f914c7485b4.png",
+    "static/media/mastercard.png": "/static/media/mastercard.3b2927f115e1a4c00b67.png",
+    "index.html": "/index.html",
+    "main.9b149a70.css.map": "/static/css/main.9b149a70.css.map",
+    "main.89d32a56.js.map": "/static/js/main.89d32a56.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9b149a70.css",
+    "static/js/main.89d32a56.js"
+  ]
+}

@@ -1,26 +1,42 @@
 from django.db import models
-from apps.category.models import Category
 from ckeditor.fields import RichTextField
-from ckeditor_uploader.fields import RichTextUploadingField
+from apps.category.models import Category
 
 
 def room_thumbnail_directory(instance, filename):
-    return 'room/{0}/{1}'.format(instance.name, filename)
+    return 'room/{0}/{1}'.format(instance.RoomName, filename)
 
 
 # Create your models here.
 class Room(models.Model):
+
+    class RoomObjects(models.Manager):
+        def get_queryset(self):
+            return super().get_queryset().filter(state='published')
+
+    options = (
+        ('draft', 'Draft'),
+        ('published', 'Published'),
+    )
+
     RoomID = models.CharField(max_length=6, primary_key=True)
     RoomName = models.CharField(max_length=255)
     Slug = models.SlugField(max_length=255, unique=True)
-    Thumbnail = models.ImageField(upload_to=room_thumbnail_directory)
+    Thumbnail = models.ImageField(
+        upload_to=room_thumbnail_directory, max_length=500)
     Description = models.TextField(max_length=255)
-    Content = RichTextUploadingField()
+    Content = RichTextField()
     RoomPrice = models.DecimalField(max_digits=4, decimal_places=2)
     RoomNumber = models.IntegerField()
     Status = models.CharField(max_length=30)
     Views = models.IntegerField(default=0, blank=True)
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
+    state = models.CharField(max_length=10, choices=options, default='draft')
+    objects = models.Manager()  # default manager
+    roomobjects = RoomObjects()  # custom manager
+
+    class Meta:
+        ordering = ('-RoomName',)
 
     def __str__(self):
         return self.RoomName
