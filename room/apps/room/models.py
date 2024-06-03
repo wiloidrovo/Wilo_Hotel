@@ -21,7 +21,7 @@ class Room(models.Model):
 
     RoomID = models.CharField(max_length=6, primary_key=True)
     RoomName = models.CharField(max_length=255)
-    Slug = models.SlugField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255, unique=True)
     Thumbnail = models.ImageField(
         upload_to=room_thumbnail_directory, max_length=500)
     Description = models.TextField(max_length=255)

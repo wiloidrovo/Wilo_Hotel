@@ -63,10 +63,10 @@ function Navbar(){
                     />
                     </Link>
                     <div className="ml-4 mt-2 flex-shrink-0">
-                    <NavLink to='/services' className="text-lg inline-flex font-medium leading-6 text-gray-900 hover:underline hover:underline-orange-500 hover:underline-offset-4 mx-4">Services</NavLink>
-                    <NavLink to='/reservations' className="text-lg inline-flex font-medium leading-6 text-gray-900 hover:underline hover:underline-orange-500 hover:underline-offset-4 mx-4">Reservations</NavLink>
-                    <NavLink to='/about' className="text-lg inline-flex font-medium leading-6 text-gray-900 hover:underline hover:underline-orange-500 hover:underline-offset-4 mx-4">About</NavLink>
-                    <NavLink to='/contact' className="text-lg inline-flex font-medium leading-6 text-gray-900 hover:underline hover:underline-orange-500 hover:underline-offset-4 mx-4">Contact</NavLink>
+                    <NavLink to='/services' className="text-lg inline-flex font-semibold leading-6 text-gray-900 hover:underline hover:underline-orange-500 hover:underline-offset-4 mx-4">Services</NavLink>
+                    <NavLink to='/reservations' className="text-lg inline-flex font-semibold leading-6 text-gray-900 hover:underline hover:underline-orange-500 hover:underline-offset-4 mx-4">Reservations</NavLink>
+                    <NavLink to='/about' className="text-lg inline-flex font-semibold leading-6 text-gray-900 hover:underline hover:underline-orange-500 hover:underline-offset-4 mx-4">About</NavLink>
+                    <NavLink to='/contact' className="text-lg inline-flex font-semibold leading-6 text-gray-900 hover:underline hover:underline-orange-500 hover:underline-offset-4 mx-4">Contact</NavLink>
                     <Link
                         to="/contact"
                         type="button"

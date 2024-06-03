@@ -71,8 +71,8 @@ class ListRoomsByCategoryView(APIView):
 
 class RoomDetailView(APIView):
     def get(self, request, slug, format=None):
-        if Room.roomobjects.filter(Slug=slug).exists():
-            room = Room.roomobjects.get(Slug=slug)
+        if Room.roomobjects.filter(slug=slug).exists():
+            room = Room.roomobjects.get(slug=slug)
             serializer = RoomSerializer(room)
 
             address = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -102,5 +102,9 @@ class SearchRoomView(APIView):
             Q(Description__icontains=search_term) |
             Q(category__name__icontains=search_term)
         )
-        serializer = RoomListSerializer(matches, many=True)
-        return Response({'filtered_rooms': serializer.data}, status=status.HTTP_200_OK)
+
+        paginator = LargeSetPagination()
+        results = paginator.paginate_queryset(matches, request)
+
+        serializer = RoomListSerializer(results, many=True)
+        return paginator.get_paginated_response({'filtered_rooms': serializer.data})

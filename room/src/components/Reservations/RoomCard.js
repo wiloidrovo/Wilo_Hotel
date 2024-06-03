@@ -2,8 +2,7 @@ import { Link } from "react-router-dom"
 
 function CaseCard({data, index}){
     return(
-        <Link
-        to='/reservations'
+        <div
         onMouseEnter={()=>{
             const title_element = document.getElementById(index)
             title_element.classList.add('text-orange-500')
@@ -28,13 +27,13 @@ function CaseCard({data, index}){
                         {data.category.name}
                       </a>
                     </p>
-                    <a href={data.href} className="mt-2 block">
+                    <Link to={data.href} className="mt-2 block">
                       <p id={index} className="lg:text-4xl text-2xl font-semibold transition duration-400 ease-in-out text-gray-900">{data.title}</p>
                       <p className="mt-3 text-xl text-gray-500">{data.description}</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
-              </Link>
+              </div>
     )
 }
 export default CaseCard

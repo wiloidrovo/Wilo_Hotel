@@ -6,24 +6,28 @@ import { useEffect } from "react"
 import { Helmet } from "react-helmet-async";
 import { get_categories } from "redux/actions/categories/categories";
 import { connect } from "react-redux";
-import { get_room_list, get_room_list_page } from "redux/actions/room/room"
+import { get_room_list_category, get_room_list_page } from "redux/actions/room/room"
 import CategoriesHeader from "components/room/CategoriesHeader"
 import RoomsList from "components/Reservations/RoomsList"
+import { useParams } from "react-router-dom"
 
-function Reservations({
+function Category({
     get_categories,
     categories,
-    get_room_list,
+    get_room_list_category,
     get_room_list_page,
     rooms,
     count,
     next,
     previous,
 }){
+    const params = useParams()
+    const slug = params.slug
+
     useEffect(()=>{
         window.scrollTo(0,0)
         get_categories()
-        get_room_list()
+        get_room_list_category(slug)
         
     },[])
 
@@ -32,7 +36,7 @@ function Reservations({
     return(
         <Layout>
             <Helmet>
-            <title>WILO'S HOTEL | Reservations</title>
+            <title>WILO'S HOTEL | Category: {slug}</title>
             <meta name="canonical" content="Luxury hotel accessible to everyone. Come and Feel Free."/>
             <meta name="keywords" content='hotel, full services, comfort, luxury'/>
             <meta name="robots" content='all'/>
@@ -56,7 +60,6 @@ function Reservations({
             <div className="pt-28">
                 <Header/>
                 <CategoriesHeader categories={categories&&categories}/>
-                <RoomsList/>
             </div>
                 <Footer/>
         </Layout>
@@ -64,7 +67,7 @@ function Reservations({
 }
 const mapStateToProps = state =>({
     categories: state.categories.categories,
-    rooms: state.room.room_list,
+    rooms: state.room.room_list_category,
     count: state.room.count,
     next: state.room.next,
     previous: state.room.previous,
@@ -72,6 +75,6 @@ const mapStateToProps = state =>({
 
 export default connect(mapStateToProps,{
     get_categories,
-    get_room_list,
+    get_room_list_category,
     get_room_list_page
-}) (Reservations)
+}) (Category)

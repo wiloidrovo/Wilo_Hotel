@@ -11,7 +11,7 @@ class RoomSerializer(serializers.ModelSerializer):
         fields = [
             'RoomID',
             'RoomName',
-            'Slug',
+            'slug',
             'Thumbnail',
             'Description',
             'Content',
@@ -31,7 +31,7 @@ class RoomListSerializer(serializers.ModelSerializer):
         fields = [
             'RoomID',
             'RoomName',
-            'Slug',
+            'slug',
             'Thumbnail',
             'Description',
             'RoomPrice',

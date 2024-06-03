@@ -25,8 +25,7 @@ function App() {
         <meta name="twitter:title" content='WILOS HOTEL' />
         <meta
             name="twitter:description"
-            content='Luxury hotel accessible to everyone..'
-        />
+            content='Luxury hotel accessible to everyone..'/>
       </Helmet>
       <Provider store={store}>
       <Router>
