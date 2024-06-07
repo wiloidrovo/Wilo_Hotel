@@ -60,6 +60,12 @@ function Category({
             <div className="pt-28">
                 <Header/>
                 <CategoriesHeader categories={categories&&categories}/>
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    {/*<div className="mx-auto max-w-7xl mt-7">
+                        <RoomList rooms={rooms&&rooms}/>
+                    </div>*/}
+                    <RoomsList rooms={rooms && rooms} />
+                </div>
             </div>
                 <Footer/>
         </Layout>

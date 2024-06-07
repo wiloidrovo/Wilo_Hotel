@@ -5,7 +5,7 @@ function RoomCardHorizontal({data, index}){
     return(
         <li 
         key={index}>
-            <Link to='/'
+            <Link to={`/room/${data.slug}`}
                 onMouseEnter={()=>{
                     const img = document.getElementById(index)
                     img.classList.add('object-scale-down')

@@ -4,7 +4,7 @@ from apps.category.models import Category
 
 
 def room_thumbnail_directory(instance, filename):
-    return 'room/{0}/{1}'.format(instance.RoomName, filename)
+    return 'room/{0}/{1}'.format(instance.slug, filename)
 
 
 # Create your models here.

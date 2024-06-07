@@ -8,6 +8,7 @@ import Contact from 'containers/pages/Contact';
 import { AnimatePresence } from 'framer-motion';
 import Category from 'containers/pages/Category';
 import Search from 'containers/pages/Search';
+import RoomDetail from 'containers/pages/RoomDetail';
 
 function AnimatedRoutes(){
     const location = useLocation()
@@ -21,6 +22,7 @@ function AnimatedRoutes(){
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/reservations" element={<Reservations />} />
+                <Route path="/reservations/:slug" element={<RoomDetail />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/s/:term" element={<Search />} />
                 <Route path="/category/:slug" element={<Category />} />

@@ -75,7 +75,7 @@ function RoomsList({rooms}){
                 itemPadding={[0,5]}
             >        
                 {rooms&&rooms.map((room, index) => (
-                    <RoomCard key={room.id} data={room} index={index}/>
+                    <RoomCard key={index} data={room} index={index}/>
                 ))}
             </Carousel>
         </div>

@@ -53,7 +53,12 @@ function Search({
           </Helmet>
             <Navbar/>
             <div className="pt-28">
-                SEARCH ROOMS
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    {/*<div className="mx-auto max-w-7xl mt-7">
+                        <RoomList rooms={rooms&&rooms}/>
+                    </div>*/}
+                    <RoomsList rooms={rooms && rooms} />
+                </div>
             </div>
                 <Footer/>
         </Layout>
