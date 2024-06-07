@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import { get_room_list, get_room_list_page } from "redux/actions/room/room"
 import CategoriesHeader from "components/room/CategoriesHeader"
 import RoomsList from "components/Reservations/RoomsList"
+import RoomList from "components/room/RoomList"
 
 function Reservations({
     get_categories,
@@ -56,7 +57,12 @@ function Reservations({
             <div className="pt-28">
                 <Header/>
                 <CategoriesHeader categories={categories&&categories}/>
-                <RoomsList/>
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    {/*<div className="mx-auto max-w-7xl mt-7">
+                        <RoomList rooms={rooms&&rooms}/>
+                    </div>*/}
+                    <RoomsList rooms={rooms && rooms} />
+                </div>
             </div>
                 <Footer/>
         </Layout>

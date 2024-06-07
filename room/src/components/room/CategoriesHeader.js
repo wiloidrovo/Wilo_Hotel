@@ -13,12 +13,12 @@ function CategoriesHeader({categories}){
     };
     const onSubmit = (e) => {
         e.preventDefault();
-        navigate("/s=" + term);
+        navigate("/s/" + term);
         setTerm("");
     };
 
     return(
-        <div className="w-full bg-gray-100 py-8">
+        <div className="w-full bg-gray-100 py-5">
             <div className="grid grid-cols-12">
                 <div className="col-span-10">
                     
@@ -56,7 +56,7 @@ function CategoriesHeader({categories}){
                         id='search'
                         name='search'
                         value={term}
-                        onChange={(e) => handleChange(e)}
+                        onChange={(e)=>handleChange(e)}
                         type='search'
                         className={`
                             py-2.5 pl-9 pr-3

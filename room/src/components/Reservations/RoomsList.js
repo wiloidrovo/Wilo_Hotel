@@ -5,11 +5,11 @@ import cuarto2 from 'assets/img/cuarto2.png'
 import cuarto3 from 'assets/img/cuarto3.png'
 import cuarto4 from 'assets/img/cuarto4.png'
 
-function RoomsList(){
-    const posts = [
+function RoomsList({rooms}){
+    {/*const rooms = [
         {
             id:'1234-qwer',
-            title: 'Boost your conversion rate',
+            title: 'Room 1',
             href: '#',
             category: { name: 'Article', href: '#' },
             description:
@@ -21,7 +21,7 @@ function RoomsList(){
         },
         {
             id:'1234-asdf',
-            title: 'How to use search engine optimization to drive sales',
+            title: 'Room 2',
             href: '#',
             category: { name: 'Video', href: '#' },
             description:
@@ -33,7 +33,7 @@ function RoomsList(){
         },
         {
             id:'4321-zxcv',
-            title: 'Improve your customer experience',
+            title: 'Room 3',
             href: '#',
             category: { name: 'Case Study', href: '#' },
             description:
@@ -45,7 +45,7 @@ function RoomsList(){
         },
         {
             id:'4321-tyui',
-            title: 'Improve your customer experience',
+            title: 'Room 4',
             href: '#',
             category: { name: 'Case Study', href: '#' },
             description:
@@ -55,7 +55,7 @@ function RoomsList(){
             imageUrl: cuarto4,
             readingTime: '11 min',
         },
-      ]
+      ]*/}
 
       const breakPoints = [
         {width: 1, itemsToShow: 1, itemsToScroll: 1},
@@ -70,15 +70,13 @@ function RoomsList(){
         </div>
         <div className="relative mx-auto max-w-7xl">
             <Carousel
-                //itemsToScroll={1}
-                //itemsToShow={1}
                 breakPoints={breakPoints}
                 pagination={false}
                 itemPadding={[0,5]}
             >        
-                    {posts.map((post, index) => (
-                    <RoomCard key={post.id} index={index} data={post}/>
-                    ))}
+                {rooms&&rooms.map((room, index) => (
+                    <RoomCard key={room.id} data={room} index={index}/>
+                ))}
             </Carousel>
         </div>
       </div>
